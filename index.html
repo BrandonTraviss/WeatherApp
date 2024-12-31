@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Demo</title>
+</head>
+
+<body>
+    <div class="search-div">
+        <div>
+            <p>Search a City</p>
+            <input type="text" id="search-input" class="search-input">
+        </div>
+        <button id="search-button" class="search-button">Search</button>
+    </div>
+    <div class="display-div" id="display-div">
+
+    </div>
+    <!-- Header Section START-->
+    <h1 class="city hidden" id="city-text">
+        <p id="city">City</p>,&nbsp;<p id="province">Province</p>
+    </h1>
+    <span class="day-text hidden" id="day-text">Day</span>
+    <header class="header hidden" id="header">
+        <div class="header-left">
+            <img src="icons/sun.svg" alt="" class="weather-icon large" data-current-icon id="current-icon" />
+            <div class="header-current-temp">
+                <span data-current-temp>31</span>&deg;C
+            </div>
+        </div>
+        <div class="header-right">
+
+            <div class="info-group">
+                <div class="label">High</div>
+                <div><span data-current-high="">32</span>&deg;C</div>
+            </div>
+
+            <div class="info-group">
+                <div class="label">FL High</div>
+                <div><span data-current-fl-high="">27</span>&deg;C</div>
+            </div>
+
+            <div class="info-group">
+                <div class="label">Wind</div>
+                <div><span data-current-wind="">9</span><span class="value-sub-info">km/h</span></div>
+            </div>
+
+            <div class="info-group">
+                <div class="label">Low</div>
+                <div><span data-current-low="">19</span>&deg;C</div>
+            </div>
+
+            <div class="info-group">
+                <div class="label">FL Low</div>
+                <div><span data-current-fl-low="">12</span>&deg;C</div>
+            </div>
+
+            <div class="info-group">
+                <div class="label">Precip</div>
+                <div><span data-current-precip="">0.1</span><span class="value-sub-info">mm</span></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section END-->
+    <!-- Day Section START-->
+    <section class="day-section hidden" id="day-section" data-day-section>
+    </section>
+    <!-- Day Section END-->
+    <!-- Hour Section START -->
+    <table class="hour-section hidden" id="hour-section">
+        <tbody id="data-hour-section" data-hour-section>
+        </tbody>
+    </table>
+    <!-- Hour section END -->
+    <!--Day-Card-Template START-->
+    <template id="day-card-template">
+        <div class="day-card">
+            <img data-icon class="weather-icon" />
+            <div class="day-card-day" data-date></div>
+            <div><span data-temp></span><span>&deg;C</span></div>
+        </div>
+    </template>
+    <!--Day-Card-Template END-->
+    <!-- Hour-Card-Template START -->
+    <template id="hour-row-template">
+        <tr class="hour-row">
+            <td>
+                <div class="info-group">
+                    <div class="label" data-day></div>
+                    <div data-time></div>
+                </div>
+            </td>
+            <td>
+                <img data-icon class="weather-icon">
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Temp</div>
+                    <div><span data-temp></span><span>&deg;C</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">FL Temp</div>
+                    <div><span data-fl-temp></span><span>&deg;C</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Wind</div>
+                    <div><span data-wind></span><span class="value-sub-info">km/h</span></div>
+                </div>
+            </td>
+            <td>
+                <div class="info-group">
+                    <div class="label">Precip</div>
+                    <div><span data-precip></span><span class="value-sub-info">in</span> </div>
+                </div>
+            </td>
+        </tr>
+    </template>
+    <!-- Hour-Card-Template END -->
+
+</body>
+<script type="module" src="main.js"></script>
+
+</html>
+<!-- https://www.youtube.com/watch?v=w0VEOghdMpQ&t=1519s -->
